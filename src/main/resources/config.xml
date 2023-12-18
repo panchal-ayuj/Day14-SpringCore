@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="emp" name="employee1" class="org.accolite.model.Employee">
+        <property name="id" value="1"/>
+        <property name="name" value="Ayuj"/>
+<!--        <property name="emailId" value="ayujpanchal@gmail.com"/>-->
+    </bean>
+
+    <bean id="emp2" name="employee2" class="org.accolite.model.Employee">
+        <constructor-arg name="id" value="2"/>
+        <constructor-arg name="name" value="Ayuj"/>
+        <constructor-arg name="emailId" value="ayujpanchal@gmail.com"/>
+    </bean>
+
+    <bean id="emp3" name="employee3" class="org.accolite.model.Employee">
+        <constructor-arg name="id" value="3"/>
+        <constructor-arg name="name" value="Ayuj"/>
+        <constructor-arg name="emailId" value="ayujpanchal@gmail.com"/>
+        <constructor-arg name="phoneNumbers"><list>
+            <value>"12121212"</value>
+            <value>"12121212"</value>
+            <value>"12121212"</value>
+        </list></constructor-arg>
+    </bean>
+
+    <bean id="emp4" name="employee4" class="org.accolite.model.Employee">
+        <property name="id" value="1"/>
+        <property name="name" value="Ayuj"/>
+        <property name="emailId" value="ayujpanchal@gmail.com"/>
+        <property name="phoneNumbers"><list>
+            <value>"12121212"</value>
+            <value>"12121212"</value>
+            <value>"12121212"</value>
+        </list></property>
+    </bean>
+
+    <bean id="emp5" name="employee5" class="org.accolite.model.Employee">
+        <property name="id" value="5"/>
+        <property name="name" value="Ayuj"/>
+        <property name="emailId" value="ayujpanchal@gmail.com"/>
+        <property name="phoneNumbers"><list>
+            <value>"12121212"</value>
+            <value>"12121212"</value>
+            <value>"12121212"</value>
+        </list></property>
+        <property name="address" ref="add1"/>
+    </bean>
+
+    <bean id="add1" name="add1" class="org.accolite.model.Address">
+        <property name="name1" value="01"/>
+        <property name="name2" value="02"/>
+    </bean>
+
+    <bean id="emp6" name="employee6" class="org.accolite.model.Employee">
+        <constructor-arg name="id" value="6"/>
+        <constructor-arg name="name" value="Ayuj"/>
+        <constructor-arg name="emailId" value="ayujpanchal@gmail.com"/>
+        <constructor-arg name="phoneNumbers"><list>
+            <value>"12121212"</value>
+            <value>"12121212"</value>
+            <value>"12121212"</value>
+        </list></constructor-arg>
+        <constructor-arg name="address" ref="add1"/>
+    </bean>
+
+    <bean id="emp7" name="employee7" class="org.accolite.model.Employee">
+        <property name="id" value="7"/>
+        <property name="name" value="Ayuj"/>
+        <property name="emailId" value="ayujpanchal@gmail.com"/>
+        <property name="phoneNumbers"><list>
+            <value>"12121212"</value>
+            <value>"12121212"</value>
+            <value>"12121212"</value>
+        </list></property>
+        <property name="address" ref="add1"/>
+        <property name="projects"><map>
+            <entry key="1" value="P1"></entry>
+            <entry key="2" value="P2"></entry>
+            <entry key="3" value="P3"></entry>
+        </map>
+        </property>
+    </bean>
+
+    <bean name="dataSource"
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/student"/>
+        <property name="username" value="root"/>
+        <property name="password" value="ayuj6240"/>
+    </bean>
+</beans>
